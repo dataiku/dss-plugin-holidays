@@ -1,0 +1,32 @@
+{
+    "meta" : {
+        "label" : "Custom holidays processor",
+        "description" : "Custom step",
+        "icon" : "icon-calendar"
+    },
+    "mode" : "CELL",
+    "params": [
+        {
+            "name": "column",
+            "label" : "Column containing dates to use as inputs",
+            "type": "COLUMN",
+            "columnRole":"input_dataset",
+            "mandatory" : true
+        },
+        {
+            "name": "country",
+            "label": "Country",
+            "type": "SELECT",
+            "selectChoices": [
+                    { "value": "GB", "label": "UK"},
+            ],
+            "defaultValue": "GB"
+        },
+        {
+            "name": "extract_name",
+            "label": "Extract holiday name",
+            "type": "BOOLEAN",
+            "description": "If enabled it will also output the name of the holiday"
+        }
+    ]
+}

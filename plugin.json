@@ -1,0 +1,13 @@
+{
+    "id": "bank_holidays",
+    "version": "0.0.1",
+    "meta": {
+        "label": "Bank Holidays",
+        "description": "A plugin to process date column(s) and identify if they're a bank holiday in a given country",
+        "author": "Dataiku (Liev Garcia)",
+        "icon": "icon-calendar",
+        "licenseInfo": "Apache Software License",
+        "url": "https://github.com/dataiku/dss-plugin-holidays",
+        "tags": ["Data Preparation"]
+    }
+}

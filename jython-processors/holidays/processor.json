@@ -4,7 +4,13 @@
         "description" : "Custom step",
         "icon" : "icon-calendar"
     },
+    "type": "PythonUDF",
     "mode" : "CELL",
+    "envSelection": {
+        "envMode": "USE_BUILTIN_MODE"
+    },
+    "useKernel": true,
+    "usePythonUnicode": true,
     "params": [
         {
             "name": "column",
@@ -18,7 +24,7 @@
             "label": "Country",
             "type": "SELECT",
             "selectChoices": [
-                    { "value": "GB", "label": "UK"},
+                { "value": "GB", "label": "United Kingdom"}
             ],
             "defaultValue": "GB"
         },
@@ -26,7 +32,7 @@
             "name": "extract_name",
             "label": "Extract holiday name",
             "type": "BOOLEAN",
-            "description": "If enabled it will also output the name of the holiday"
+            "description": ""
         }
     ]
 }

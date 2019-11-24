@@ -1,7 +1,7 @@
 {
     "meta" : {
-        "label" : "Custom holidays processor",
-        "description" : "Custom step",
+        "label" : "Holidays processor",
+        "description" : "Step to flag holidays in a selected country",
         "icon" : "icon-calendar"
     },
     "type": "PythonUDF",
@@ -14,7 +14,7 @@
     "params": [
         {
             "name": "column",
-            "label" : "Column containing dates to use as inputs",
+            "label" : "Input column",
             "type": "COLUMN",
             "columnRole":"input_dataset",
             "mandatory" : true

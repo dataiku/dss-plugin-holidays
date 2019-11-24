@@ -3,9 +3,7 @@ import os
 import pandas as pd
 import json
 
-logger = logging.getLogger(__name__)
-logging.basicConfig(level=logging.INFO,  # avoid getting log from 3rd party module
-                    format='Anonymization plugin %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO,  format='Bank holidays plugin %(levelname)s - %(message)s')
 
 # TODO find a better way of doing this!!! when the processor starts it does so under the tmp folder, not the plugin folder...
 file_dir = (os.path.abspath(os.path.join(os.path.dirname("__file__"), '../../..')) + '/plugins/dev/bank_holidays/resources')

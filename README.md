@@ -1,7 +1,8 @@
-# Bank Holidays Plugin
+# Holidays Plugin
 
-This plugin provides tools to enrich datasets by flagging if dates contained in a specific column correspond to a Bank Holiday in a given country.
+This Dataiku DSS plugin provides a processor to enrich datasets that contain dates. The processor will flag whether the date corresponds to a UK Bank holiday, and optionally output the name of the holiday.
 
-# Prepare step
+Documentation: https://www.dataiku.com/dss/plugins/info/holidays.html
 
-The plugin adds a new custom step in the Prepare recipe that allows user to do select a column and a country and identify if it falls on a bank holiday.
+### Licence
+This plugin is distributed under the Apache License version 2.0

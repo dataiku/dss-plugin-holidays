@@ -1,7 +1,7 @@
 {
     "meta" : {
         "label" : "Holidays processor",
-        "description" : "Step to flag holidays in a selected country",
+        "description" : "Step to flag UK holidays from a date column",
         "icon" : "icon-calendar"
     },
     "type": "PythonUDF",

@@ -62,8 +62,8 @@ def process(row):
 
     # There might be a better way if one could access the dataset from outside the process method?
     if SET_COLUMN_NAMES is True:
-        IS_HOLIDAY_COLUMN = generate_next_column_name(row.columns, "is_holiday")
-        HOLIDAY_REASON_COLUMN = generate_next_column_name(row.columns, "holiday_reason")
+        IS_HOLIDAY_COLUMN = generate_next_column_name(row.columns, "{}_holiday_bank".format(selected_column))
+        HOLIDAY_REASON_COLUMN = generate_next_column_name(row.columns, "{}_holiday_bank_reasons".format(selected_column))
         SET_COLUMN_NAMES = False
 
     if extract_name is True:

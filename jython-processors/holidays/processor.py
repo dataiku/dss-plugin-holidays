@@ -15,12 +15,14 @@ IS_HOLIDAY_COLUMN = None
 HOLIDAY_REASON_COLUMN = None
 
 # TODO find a better way of doing this!!! when the processor starts it does so under the tmp folder, not the plugin folder...
-file_dir = (os.path.abspath(os.path.join(os.path.dirname("__file__"), '../../..')) + '/plugins/dev/holidays/resources')
-# this is when one assumes the path is relative to the plugin itself
-# file_dir = (os.path.abspath(os.path.join(os.path.dirname("__file__"), '../..')) + '/resources')
-
-df = pd.read_csv(os.path.join(file_dir, 'holidays_calendar.csv'))
-df['date'] = df['date'].astype('datetime64')
+folders = ['installed', 'dev']
+for folder in folders:
+    file_dir = os.path.join(os.environ['DIP_HOME'], 'plugins/{}/holidays/resources/holidays_calendar.csv'.format(folder))
+    try:
+        df = pd.read_csv(file_dir)
+        df['date'] = df['date'].astype('datetime64')
+    except IOError:
+        None
 
 
 def generate_next_column_name(columns, column):

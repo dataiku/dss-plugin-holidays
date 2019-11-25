@@ -5,7 +5,7 @@
         "icon" : "icon-calendar"
     },
     "type": "PythonUDF",
-    "mode" : "CELL",
+    "mode" : "ROW",
     "envSelection": {
         "envMode": "USE_BUILTIN_MODE"
     },

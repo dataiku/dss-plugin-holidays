@@ -13,7 +13,7 @@
     "usePythonUnicode": true,
     "params": [
         {
-            "name": "column",
+            "name": "input_column",
             "label" : "Input column",
             "type": "COLUMN",
             "columnRole":"input_dataset",
@@ -29,8 +29,8 @@
             "defaultValue": "GB"
         },
         {
-            "name": "extract_name",
-            "label": "Extract holiday name",
+            "name": "output_holiday_name",
+            "label": "Output holiday name",
             "type": "BOOLEAN",
             "description": ""
         }

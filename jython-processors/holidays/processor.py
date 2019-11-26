@@ -7,7 +7,7 @@ import datetime
 
 logging.basicConfig(level=logging.INFO,  format='Holidays plugin %(levelname)s - %(message)s')
 
-folders = ['installed', 'devs']
+folders = ['installed', 'dev']
 for folder in folders:
     file_path = os.path.join(os.environ['DIP_HOME'], 'plugins/{}/holidays/resources/holidays_calendar.csv'.format(folder))
     if os.path.exists(file_path) is True:
@@ -16,7 +16,10 @@ for folder in folders:
 
 # TODO maybe a better way of handling the case where the resources file is not found in either folder.
 # Like if someone forgot to upload it to git(?)
-if df is None:
+try:
+    df
+except Exception as e:
+    logging.info("Creating an empty dataframe as file was not found.")
     df = pd.DataFrame(columns=['country_iso', 'date', 'holiday_reason'])
 
 
@@ -29,7 +32,7 @@ def process(row):
         parsed_input = parser.parse(row.get(input_column), ignoretz=True)
     except Exception as e:
         parsed_input = pd.Timestamp.min
-        logging.info("Error parsing input date, using dummy date")
+        logging.info("Error parsing input date, using dummy date.")
 
     is_holiday = df[(df['country_iso']==country) & (df['date']==parsed_input)]
 

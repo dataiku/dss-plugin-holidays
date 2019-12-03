@@ -4,7 +4,7 @@
     "meta": {
         "supportLevel": "NOT_SUPPORTED",
         "label": "Holidays",
-        "description": "Flag UK holidays in a dataset containing dates",
+        "description": "Flag bank holidays in a dataset containing dates, support for over 50 countries",
         "author": "Dataiku (Liev Garcia)",
         "icon": "icon-calendar",
         "licenseInfo": "Apache Software License",

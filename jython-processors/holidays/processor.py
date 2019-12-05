@@ -40,7 +40,8 @@ def process(row):
     flag_weekends = params.get('flag_weekends')
 
     try:
-        parsed_input = parser.parse(row.get(input_column), ignoretz=True)
+        parsed_input = parser.parse(row.get(input_column))
+        parsed_input = parsed_input.replace(tzinfo=None)
         day_of_the_week = parsed_input.weekday()
     except Exception as e:
         parsed_input = pd.Timestamp.min

@@ -6,9 +6,6 @@
     },
     "type": "PythonUDF",
     "mode" : "ROW",
-    "envSelection": {
-        "envMode": "USE_BUILTIN_MODE"
-    },
     "useKernel": true,
     "usePythonUnicode": true,
     "params": [

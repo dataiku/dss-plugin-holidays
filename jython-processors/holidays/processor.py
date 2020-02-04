@@ -5,7 +5,10 @@ from dateutil import parser
 import datetime
 import json
 
-logging.basicConfig(level=logging.INFO,  format='Holidays plugin %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO,
+                    format='holidays plugin %(levelname)s - %(message)s')
+
 folders = ['installed', 'dev']
 
 
@@ -21,8 +24,8 @@ def load_or_create_dataframe(file_name, columns):
 
     file_path = get_file_path(file_name)
     if file_path is None:
-        df = pd.DataFrame(columns=columns, index_col=index_col)
-        logging.info("Creating an empty dataframe as file was not found.")
+        df = pd.DataFrame(columns=columns)
+        logger.info("Creating an empty dataframe as file was not found.")
     else:
         df = pd.read_csv(file_path)
     return df
@@ -30,10 +33,11 @@ def load_or_create_dataframe(file_name, columns):
 
 holidays_df = load_or_create_dataframe("holidays_calendar.csv", columns=["country_name","country_iso","date","holiday_reason"])
 holidays_df['date'] = holidays_df['date'].astype('datetime64')
-weekends_df = load_or_create_dataframe("weekends.csv", columns=["country_name","country_iso","weekend_day_numbers"])
+weekends_df = load_or_create_dataframe("weekend_days.csv", columns=["country_name","country_iso","weekend_day_numbers"])
 
 
 def process(row):
+
     input_column = params.get('input_column')
     country = params.get('country')
     output_holiday_name = params.get('output_holiday_name')
@@ -45,7 +49,7 @@ def process(row):
         day_of_the_week = parsed_input.weekday()
     except Exception as e:
         parsed_input = pd.Timestamp.min
-        logging.info("Error parsing input date, using dummy date.")
+        logger.info("Error parsing input date, using dummy date.")
 
     is_holiday = holidays_df[(holidays_df.country_iso==country) & (holidays_df.date==parsed_input)]
 

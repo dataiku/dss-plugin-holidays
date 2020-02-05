@@ -4,7 +4,11 @@ This Dataiku DSS plugin provides a processor to enrich datasets that contain dat
 
 Documentation: https://www.dataiku.com/dss/plugins/info/holidays.html
 
-## Countries covered
+## Dependencies
+The plugin depends on the [workalendar](https://github.com/peopledoc/workalendar) library and it will be updated to reflect the latest changes in it.
+
+## Countries and years covered:
+Most of the countries are covered 1950-2100, for exceptions the specific range is noted next to the country.
 - Algeria
 - Angola
 - Australia
@@ -17,7 +21,7 @@ Documentation: https://www.dataiku.com/dss/plugins/info/holidays.html
 - Canada
 - Cayman Islands
 - Chile
-- China
+- China (2018-2020)
 - Colombia
 - Croatia
 - Cyprus
@@ -26,7 +30,7 @@ Documentation: https://www.dataiku.com/dss/plugins/info/holidays.html
 - Estonia
 - Finland
 - Greece
-- Hong Kong
+- Hong Kong (1950-2053)
 - Hungary
 - Iceland
 - Ireland
@@ -38,7 +42,7 @@ Documentation: https://www.dataiku.com/dss/plugins/info/holidays.html
 - Lithuania
 - Luxembourg
 - Madagascar
-- Malaysia
+- Malaysia (2010-2021)
 - Malta
 - Marshall Islands
 - Mexico
@@ -52,7 +56,7 @@ Documentation: https://www.dataiku.com/dss/plugins/info/holidays.html
 - Qatar
 - Romania
 - Russia
-- Singapore
+- Singapore (2000-2021)
 - Slovakia
 - Slovenia
 - South Africa
@@ -60,7 +64,7 @@ Documentation: https://www.dataiku.com/dss/plugins/info/holidays.html
 - Sweden
 - Switzerland
 - São Tomé and Príncipe
-- Taiwan (Republic of China)
+- Taiwan (Republic of China) (1950-2053)
 - Turkey
 - United Kingdom
 

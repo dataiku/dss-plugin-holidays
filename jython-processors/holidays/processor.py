@@ -35,14 +35,15 @@ holidays_df = load_or_create_dataframe("holidays_calendar.csv", columns=["countr
 holidays_df['date'] = holidays_df['date'].astype('datetime64')
 weekends_df = load_or_create_dataframe("weekend_days.csv", columns=["country_name","country_iso","weekend_day_numbers"])
 
+input_column = params.get('input_column')
+country = params.get('country')
+output_holiday_name = params.get('output_holiday_name')
+flag_weekends = params.get('flag_weekends')
+
+holidays_df = holidays_df[holidays_df.country_iso==country]
+weekends_df = weekends_df[weekends_df.country_iso==country]
 
 def process(row):
-
-    input_column = params.get('input_column')
-    country = params.get('country')
-    output_holiday_name = params.get('output_holiday_name')
-    flag_weekends = params.get('flag_weekends')
-
     try:
         parsed_input = parser.parse(row.get(input_column))
         parsed_input = parsed_input.replace(tzinfo=None)
@@ -51,14 +52,14 @@ def process(row):
         parsed_input = pd.Timestamp.min
         logger.info("Error parsing input date, using dummy date.")
 
-    is_holiday = holidays_df[(holidays_df.country_iso==country) & (holidays_df.date==parsed_input)]
+    is_holiday = holidays_df[holidays_df.date==parsed_input]
 
     row["is_holiday"] = bool(is_holiday.shape[0])
     if output_holiday_name is True:
-        row["holiday_name"] = next(iter(is_holiday.holiday_reason.tolist()), None)
+        row["holiday_name"] = is_holiday.holiday_reason.tolist()
 
     if flag_weekends is True:
-        weekend_days = json.loads(next(iter(weekends_df.weekend_day_numbers.tolist()), None))
+        weekend_days = json.loads(weekends_df.weekend_day_numbers.tolist()[0])
         row["is_weekend"] = day_of_the_week in weekend_days
 
     return row

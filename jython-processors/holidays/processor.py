@@ -56,7 +56,8 @@ def process(row):
 
     row["is_holiday"] = bool(is_holiday.shape[0])
     if output_holiday_name is True:
-        row["holiday_name"] = is_holiday.holiday_reason.tolist()
+        holiday_names = is_holiday.holiday_reason.tolist()
+        row["holiday_name"] = str([h.encode('utf-8').decode('utf-8') for h in holiday_names])
 
     if flag_weekends is True:
         weekend_days = json.loads(weekends_df.weekend_day_numbers.tolist()[0])

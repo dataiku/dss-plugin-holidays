@@ -1,0 +1,272 @@
+{
+    "meta": {
+        "label": "Holidays processor",
+        "icon": "icon-calendar",
+        "description": "Step to flag world holidays and/or weekends from a date column from 1900 to 2100. If the full range of years is not available for a given country an alternative range is shown next to the country name. \n Available countries:\n- Algeria\n- Angola\n- Australia\n- Austria\n- Barbados\n- Belgium\n- Benin\n- Brazil\n- Bulgaria\n- Canada\n- Cayman Islands\n- Chile\n- China (2018,2019)\n- Colombia\n- Croatia\n- Cyprus\n- Czech Republic\n- Denmark\n- Estonia\n- Finland\n- Greece\n- Hong Kong (1900-2053)\n- Hungary\n- Iceland\n- Ireland\n- Israel\n- Italy\n- Ivory Coast\n- Japan (1900-2052)\n- Latvia\n- Lithuania\n- Luxembourg\n- Madagascar\n- Malaysia (2010-2020)\n- Malta\n- Marshall Islands\n- Mexico\n- Netherlands\n- New Zealand\n- Norway\n- Panama\n- Paraguay\n- Poland\n- Portugal\n- Qatar\n- Romania\n- Russia\n- Singapore (2000-2020)\n- Slovakia\n- Slovenia\n- South Africa (1910-2100)\n- South Korea (1900-2099)\n- Sweden\n- Switzerland\n- S\u00e3o Tom\u00e9 and Pr\u00edncipe\n- Taiwan (Republic of China) (1900-2053)\n- Turkey\n- United Kingdom"
+    },
+    "type": "PythonUDF",
+    "mode": "ROW",
+    "useKernel": true,
+    "usePythonUnicode": true,
+    "params": [
+        {
+            "name": "input_column",
+            "label": "Input column",
+            "type": "COLUMN",
+            "columnRole": "input_dataset",
+            "mandatory": true
+        },
+        {
+            "name": "output_holiday_name",
+            "label": "Output holiday name",
+            "type": "BOOLEAN",
+            "description": ""
+        },
+        {
+            "name": "flag_weekends",
+            "label": "Flag weekends",
+            "type": "BOOLEAN",
+            "description": ""
+        },
+        {
+            "name": "country",
+            "label": "Country",
+            "type": "SELECT",
+            "selectChoices": [
+                {
+                    "value": "DZ",
+                    "label": "Algeria"
+                },
+                {
+                    "value": "AO",
+                    "label": "Angola"
+                },
+                {
+                    "value": "AU",
+                    "label": "Australia"
+                },
+                {
+                    "value": "AT",
+                    "label": "Austria"
+                },
+                {
+                    "value": "BB",
+                    "label": "Barbados"
+                },
+                {
+                    "value": "BE",
+                    "label": "Belgium"
+                },
+                {
+                    "value": "BJ",
+                    "label": "Benin"
+                },
+                {
+                    "value": "BR",
+                    "label": "Brazil"
+                },
+                {
+                    "value": "BG",
+                    "label": "Bulgaria"
+                },
+                {
+                    "value": "CA",
+                    "label": "Canada"
+                },
+                {
+                    "value": "KY",
+                    "label": "Cayman Islands"
+                },
+                {
+                    "value": "CL",
+                    "label": "Chile"
+                },
+                {
+                    "value": "CN",
+                    "label": "China"
+                },
+                {
+                    "value": "CO",
+                    "label": "Colombia"
+                },
+                {
+                    "value": "HR",
+                    "label": "Croatia"
+                },
+                {
+                    "value": "CY",
+                    "label": "Cyprus"
+                },
+                {
+                    "value": "CZ",
+                    "label": "Czech Republic"
+                },
+                {
+                    "value": "DK",
+                    "label": "Denmark"
+                },
+                {
+                    "value": "EE",
+                    "label": "Estonia"
+                },
+                {
+                    "value": "FI",
+                    "label": "Finland"
+                },
+                {
+                    "value": "GR",
+                    "label": "Greece"
+                },
+                {
+                    "value": "HK",
+                    "label": "Hong Kong"
+                },
+                {
+                    "value": "HU",
+                    "label": "Hungary"
+                },
+                {
+                    "value": "IS",
+                    "label": "Iceland"
+                },
+                {
+                    "value": "IE",
+                    "label": "Ireland"
+                },
+                {
+                    "value": "IL",
+                    "label": "Israel"
+                },
+                {
+                    "value": "IT",
+                    "label": "Italy"
+                },
+                {
+                    "value": "CI",
+                    "label": "Ivory Coast"
+                },
+                {
+                    "value": "JP",
+                    "label": "Japan"
+                },
+                {
+                    "value": "LV",
+                    "label": "Latvia"
+                },
+                {
+                    "value": "LT",
+                    "label": "Lithuania"
+                },
+                {
+                    "value": "LU",
+                    "label": "Luxembourg"
+                },
+                {
+                    "value": "MG",
+                    "label": "Madagascar"
+                },
+                {
+                    "value": "MY",
+                    "label": "Malaysia"
+                },
+                {
+                    "value": "MT",
+                    "label": "Malta"
+                },
+                {
+                    "value": "MH",
+                    "label": "Marshall Islands"
+                },
+                {
+                    "value": "MX",
+                    "label": "Mexico"
+                },
+                {
+                    "value": "NL",
+                    "label": "Netherlands"
+                },
+                {
+                    "value": "NZ",
+                    "label": "New Zealand"
+                },
+                {
+                    "value": "NO",
+                    "label": "Norway"
+                },
+                {
+                    "value": "PA",
+                    "label": "Panama"
+                },
+                {
+                    "value": "PY",
+                    "label": "Paraguay"
+                },
+                {
+                    "value": "PL",
+                    "label": "Poland"
+                },
+                {
+                    "value": "PT",
+                    "label": "Portugal"
+                },
+                {
+                    "value": "QA",
+                    "label": "Qatar"
+                },
+                {
+                    "value": "RO",
+                    "label": "Romania"
+                },
+                {
+                    "value": "RU",
+                    "label": "Russia"
+                },
+                {
+                    "value": "SG",
+                    "label": "Singapore"
+                },
+                {
+                    "value": "SK",
+                    "label": "Slovakia"
+                },
+                {
+                    "value": "SI",
+                    "label": "Slovenia"
+                },
+                {
+                    "value": "ZA",
+                    "label": "South Africa"
+                },
+                {
+                    "value": "KR",
+                    "label": "South Korea"
+                },
+                {
+                    "value": "SE",
+                    "label": "Sweden"
+                },
+                {
+                    "value": "CH",
+                    "label": "Switzerland"
+                },
+                {
+                    "value": "ST",
+                    "label": "S\u00e3o Tom\u00e9 and Pr\u00edncipe"
+                },
+                {
+                    "value": "TW",
+                    "label": "Taiwan (Republic of China)"
+                },
+                {
+                    "value": "TR",
+                    "label": "Turkey"
+                },
+                {
+                    "value": "GB",
+                    "label": "United Kingdom"
+                }
+            ],
+            "defaultValue": "GB"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "id": "holidays",
+    "version": "1.0.0",
+    "meta": {
+        "supportLevel": "NOT_SUPPORTED",
+        "label": "Holidays",
+        "description": "Flag bank holidays in a dataset containing dates, support for over 50 countries",
+        "author": "Dataiku (Liev Garcia)",
+        "icon": "icon-calendar",
+        "licenseInfo": "Apache Software License",
+        "url": "https://www.dataiku.com/dss/plugins/info/holidays.html",
+        "tags": ["Data Preparation"]
+    }
+}

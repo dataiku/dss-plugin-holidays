@@ -2,7 +2,7 @@
 
 This Dataiku DSS plugin provides a processor to enrich datasets that contain dates. The processor will flag whether the date corresponds to a bank holiday across over 50 countries, and optionally output the name of the holiday.
 
-Documentation: https://www.dataiku.com/dss/plugins/info/holidays.html
+Documentation: https://www.dataiku.com/product/plugins/holidays/
 
 ## Dependencies
 The plugin depends on the [workalendar](https://github.com/peopledoc/workalendar) library and it will be updated to reflect the latest changes in it.
@@ -14,6 +14,7 @@ Most of the countries are covered 1950-2100, for exceptions the specific range i
 - Australia
 - Austria
 - Barbados
+- Belarus
 - Belgium
 - Benin
 - Brazil
@@ -56,6 +57,7 @@ Most of the countries are covered 1950-2100, for exceptions the specific range i
 - Qatar
 - Romania
 - Russia
+- Serbia
 - Singapore (2000-2021)
 - Slovakia
 - Slovenia
@@ -66,6 +68,7 @@ Most of the countries are covered 1950-2100, for exceptions the specific range i
 - São Tomé and Príncipe
 - Taiwan (Republic of China) (1950-2053)
 - Turkey
+- Ukraine
 - United Kingdom
 
 ### Licence

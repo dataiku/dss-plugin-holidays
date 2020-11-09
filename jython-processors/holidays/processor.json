@@ -17,18 +17,6 @@
             "mandatory": true
         },
         {
-            "name": "output_holiday_name",
-            "label": "Output holiday name",
-            "type": "BOOLEAN",
-            "description": ""
-        },
-        {
-            "name": "flag_weekends",
-            "label": "Flag weekends",
-            "type": "BOOLEAN",
-            "description": ""
-        },
-        {
             "name": "country",
             "label": "Country",
             "type": "SELECT",
@@ -295,6 +283,18 @@
                     "label": "United Kingdom"
                 }
             ]
-        }
+        },
+        {
+            "name": "output_holiday_name",
+            "label": "Output holiday name",
+            "type": "BOOLEAN",
+            "description": ""
+        },
+        {
+            "name": "flag_weekends",
+            "label": "Flag weekends",
+            "type": "BOOLEAN",
+            "description": ""
+        }        
     ]
 }

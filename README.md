@@ -5,9 +5,11 @@ This Dataiku DSS plugin provides a processor to enrich datasets that contain dat
 Documentation: https://www.dataiku.com/product/plugins/holidays/
 
 ## Dependencies
+
 The plugin depends on the [workalendar](https://github.com/peopledoc/workalendar) library and it will be updated to reflect the latest changes in it.
 
-## Countries and years covered:
+## Countries and years covered
+
 Most of the countries are covered 1950-2100, for exceptions the specific range is noted next to the country.
 - Algeria
 - Angola
@@ -71,5 +73,6 @@ Most of the countries are covered 1950-2100, for exceptions the specific range i
 - Ukraine
 - United Kingdom
 
-### Licence
-This plugin is distributed under the Apache License version 2.0
+## License
+
+This plugin is distributed under the Apache License version 2.0.

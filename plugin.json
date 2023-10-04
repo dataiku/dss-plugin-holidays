@@ -1,10 +1,10 @@
 {
     "id": "holidays",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "meta": {
         "supportLevel": "NOT_SUPPORTED",
-        "label": "Holidays",
-        "description": "Flag bank holidays in a dataset containing dates, support for over 50 countries",
+        "label": "Holidays (deprecated)",
+        "description": "Flag bank holidays in a dataset containing dates, support for over 50 countries. ⚠️ This plugin is now \"deprecated\", we recommend using the native [Flag holidays](https://doc.dataiku.com/dss/latest/preparation/processors/holidays-computer.html) processor instead.",
         "author": "Dataiku (Liev Garcia)",
         "icon": "icon-calendar",
         "licenseInfo": "Apache Software License",

@@ -32,7 +32,7 @@ def load_or_create_dataframe(file_name, columns):
 
 
 holidays_df = load_or_create_dataframe("holidays_calendar.csv", columns=["country_name","country_iso","date","holiday_reason"])
-holidays_df['date'] = holidays_df['date'].astype('datetime64')
+holidays_df['date'] = holidays_df['date'].astype('datetime64[ns]')
 weekends_df = load_or_create_dataframe("weekend_days.csv", columns=["country_name","country_iso","weekend_day_numbers"])
 
 input_column = params.get('input_column')
